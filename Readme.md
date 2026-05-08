@@ -1,5 +1,6 @@
-# My personal dotfiles I use on my framework Laptop that runs Nixos
+# Personal Dotfiles
 
+These Dotfiles are used on a Framework 13 Laptop that runs Nixos  
 Tracked using stow and git
 
 ## List of tracked configs

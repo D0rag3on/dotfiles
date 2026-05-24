@@ -1,7 +1,3 @@
-if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTR}" -eq 1 }; then
-  dbus-run-session start-hyprland
-fi
-
 export EDITOR=nvim
 export VISUAL=nvim
 

@@ -1,2 +1,3 @@
 alias config="sudo -e /etc/nixos/configuration.nix"
-alias rebuild ="sudo nixos-rebuild switch"
+alias rebuild="sudo nixos-rebuild switch"
+alias sudo="sudo "

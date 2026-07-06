@@ -10,6 +10,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+  inputs = {
+    noctalia = {
+      url = "github:noctalia-dev/noctalia";
+      inputs.nixpkgs.follows = "nixpkgs"; # this line is optional, prevents downloading two versions of nixpkgs but disables cache
+    };
+  };
 
   outputs = { self, nixpkgs, ... }@inputs: {
     nixosConfigurations.GlaDOS = nixpkgs.lib.nixosSystem {

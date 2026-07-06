@@ -49,19 +49,29 @@
  
   services.gvfs.enable = true;
   programs.hyprland.enable = true;
+  programs.niri.enable = true;
   programs.nix-ld.enable = true;
   programs.fish.enable = true;
+  programs.noctalia.systemd.enable = true;
+ 
 	
   services.greetd = {
     enable = true;
     settings = rec {
+      # default_session = {
+      #   command = "${pkgs.hyprland}/bin/start-hyprland";
+      # 	user = "nono";
+      # };
       default_session = {
-        command = "${pkgs.hyprland}/bin/start-hyprland";
-      	user = "nono";
+          command = "${config.programs.niri.package}/bin/niri-session";
+          user = "myuser";
       };
     };
   };
-
+  systemd.user.services.niri.enableDefaultPath = false;
+  
+  services.power-profiles-daemon.enable = true;
+  services.upower.enable = true;
   services.blueman.enable = true;
   hardware.bluetooth = {
     enable = true;
@@ -193,6 +203,7 @@
     fd
     bat
     zoxide
+    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
   fonts.packages = with pkgs; [
